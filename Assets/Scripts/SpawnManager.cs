@@ -6,12 +6,13 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] alienPrefabs;
     private float spawnRangeX = 11.0f;
-    int[] spawnRangeY = {0, 2, 4};
+    private float startDelay = 1.0f;
+    private float spawnInterval = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("SpawnRandomAlien", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
@@ -22,8 +23,8 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnRandomAlien()
     {
-        //Vector2 spawnPos = new Vector2(spawnRangeX, spawnRangeY);
+        Vector2 spawnPos = new Vector2(spawnRangeX, Random.Range(-4, 4));
         int alienIndex = (Random.Range(0, alienPrefabs.Length));
-        //Instatiate(alienPrefabs[alienIndex], spawnPos, alienPrefabs[animalIndex].transform.rotation);
+        Instantiate(alienPrefabs[alienIndex], spawnPos, alienPrefabs[alienIndex].transform.rotation);
     }
 }
