@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnRangeX = 11.0f;
     private float startDelay = 1.0f;
     private float spawnInterval = 1.0f;
-    //private int[] spawnRangeY = { -4, -2, 0, 2, 4 };
+    private int[] spawnRangeY = { -4, -2, 0, 2, 4 };
     //private int yRange = spawnRangeY[Random.Range(0, 4)];
 
     //private int laneOne = 4;
@@ -31,8 +31,9 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnRandomAlien()
     {
-        Vector2 spawnPos = new Vector2(spawnRangeX, Random.Range(-4, 4));
-        //Vector2 spawnPos = new Vector2(spawnRangeX, Random.Range(spawnRangeY));
+        //Vector2 spawnPos = new Vector2(spawnRangeX, Random.Range(-4, 4));
+        Vector2 spawnPos = new Vector2(spawnRangeX, Random.Range(-4, spawnRangeY.Length));
+        Debug.Log("spawnPos" + spawnPos);
         //Vector2 spawnPos = new Vector2(spawnRangeX, Random.Next(0, spawnRangeY.Length));
         //Vector2 spawnPos = new Vector2(spawnRangeX, Random.Next(laneOne, laneTwo, laneThree, laneFour, laneFive));
         //Vector2 spawnPos = new Vector2(spawnRangeX, yRange);
