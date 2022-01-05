@@ -34,7 +34,17 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(transform.position.x, -yRange);
         }
 
-        verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector2.up * verticalInput * Time.deltaTime * speed);
+        //verticalInput = Input.GetAxis("Vertical");
+        //transform.Translate(Vector2.up * verticalInput * Time.deltaTime * speed);
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y +2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y -2);
+        }
     }
 }
