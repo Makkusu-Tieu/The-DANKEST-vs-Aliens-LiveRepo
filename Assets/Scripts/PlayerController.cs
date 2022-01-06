@@ -24,16 +24,6 @@ public class PlayerController : MonoBehaviour
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation); 
         }
 
-        if (transform.position.y > yRange)
-        {
-            transform.position = new Vector2(transform.position.x, yRange);
-        }
-
-        if (transform.position.y < -yRange)
-        {
-            transform.position = new Vector2(transform.position.x, -yRange);
-        }
-
         //verticalInput = Input.GetAxis("Vertical");
         //transform.Translate(Vector2.up * verticalInput * Time.deltaTime * speed);
 
@@ -45,6 +35,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             transform.position = new Vector2(transform.position.x, transform.position.y -2);
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (transform.position.y > yRange)
+        {
+            transform.position = new Vector2(transform.position.x, yRange);
+        }
+
+        if (transform.position.y < -yRange)
+        {
+            transform.position = new Vector2(transform.position.x, -yRange);
         }
     }
 }
