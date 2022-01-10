@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 1400948772}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7349fc3e4880a4542885afe64a26e5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 5
   currentHealth: 0
 --- !u!61 &1400948772
 BoxCollider2D:

@@ -21,11 +21,21 @@ public class WallController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        TakeDamage(1);
+        if (other.gameObject.CompareTag("Alien"))
+        {
+            TakeDamage(1);
+            Destroy(other.gameObject);
+        }
     }
 
     void TakeDamage(int damage)
     {
-        currentHealth -= damage; 
+        currentHealth -= damage;
+        Debug.Log("Current Health:" + currentHealth);
+
+        if (currentHealth < 1)
+        {
+            Destroy(gameObject);
+        }
     }
 }
