@@ -581,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  healthBar: {fileID: 448612455}
 --- !u!61 &1400948772
 BoxCollider2D:
   m_ObjectHideFlags: 0
