@@ -35,7 +35,7 @@ public class WallController : MonoBehaviour
     {
         currentHealth -= damage;
 
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth < 1)
         {
