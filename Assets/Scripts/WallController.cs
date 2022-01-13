@@ -40,6 +40,7 @@ public class WallController : MonoBehaviour
         if (currentHealth < 1)
         {
             Destroy(gameObject);
+            Time.timeScale = 0;
         }
     }
 }
