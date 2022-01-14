@@ -10,6 +10,7 @@ public class WallController : MonoBehaviour
     public HealthBar healthBar;
     public GameObject gameOverText;
     public GameObject wallBreachText;
+    public GameObject tryAgainButton;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class WallController : MonoBehaviour
             Time.timeScale = 0;
             gameOverText.SetActive(true);
             wallBreachText.SetActive(true);
+            tryAgainButton.SetActive(true);
         }
     }
 }

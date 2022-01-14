@@ -24,9 +24,6 @@ public class PlayerController : MonoBehaviour
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation); 
         }
 
-        //verticalInput = Input.GetAxis("Vertical");
-        //transform.Translate(Vector2.up * verticalInput * Time.deltaTime * speed);
-
         if (Input.GetKeyDown(KeyCode.W))
         {
             transform.position = new Vector2(transform.position.x, transform.position.y +2);
@@ -49,5 +46,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x, -yRange);
         }
+    }
+
+    public void NewGame()
+    {
+        Debug.Log("New Game!");
     }
 }
