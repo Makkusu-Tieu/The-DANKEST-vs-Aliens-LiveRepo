@@ -8,6 +8,8 @@ public class WallController : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthBar;
+    public GameObject gameOverText;
+    public GameObject wallBreachText;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,8 @@ public class WallController : MonoBehaviour
         {
             Destroy(gameObject);
             Time.timeScale = 0;
+            gameOverText.SetActive(true);
+            wallBreachText.SetActive(true);
         }
     }
 }
