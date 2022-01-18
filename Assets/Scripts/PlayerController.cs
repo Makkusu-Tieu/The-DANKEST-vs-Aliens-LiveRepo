@@ -10,6 +10,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject projectilePrefab;
 
+    public GameObject gameOverText;
+    public GameObject wallBreachText;
+    public GameObject tryAgainButton;
+
+    public GameObject wall;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +56,18 @@ public class PlayerController : MonoBehaviour
 
     public void NewGame()
     {
-        Debug.Log("New Game!");
+        Time.timeScale = 1;
+
+        GameObject[] allAliens = GameObject.FindGameObjectsWithTag("Alien");
+        foreach (GameObject alien in allAliens)
+            GameObject.Destroy(alien);
+
+        GameObject[] allProjectiles = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach (GameObject bullet in allProjectiles)
+            GameObject.Destroy(bullet);
+
+        gameOverText.SetActive(false);
+        wallBreachText.SetActive(false);
+        tryAgainButton.SetActive(false);
     }
 }
