@@ -66,8 +66,11 @@ public class PlayerController : MonoBehaviour
         foreach (GameObject bullet in allProjectiles)
             GameObject.Destroy(bullet);
 
+        wall.SetActive(true);
         gameOverText.SetActive(false);
         wallBreachText.SetActive(false);
         tryAgainButton.SetActive(false);
+
+
     }
 }

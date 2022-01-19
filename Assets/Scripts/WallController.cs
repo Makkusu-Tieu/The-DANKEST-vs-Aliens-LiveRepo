@@ -11,6 +11,7 @@ public class WallController : MonoBehaviour
     public GameObject gameOverText;
     public GameObject wallBreachText;
     public GameObject tryAgainButton;
+    public GameObject wall;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,15 @@ public class WallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth < 1)
+        {
+            currentHealth = maxHealth;
+        }
+
+        if (currentHealth > 4)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,7 +51,8 @@ public class WallController : MonoBehaviour
 
         if (currentHealth < 1)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            wall.SetActive(false);
             Time.timeScale = 0;
             gameOverText.SetActive(true);
             wallBreachText.SetActive(true);
