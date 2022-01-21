@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject wall;
 
+    //public GameObject spawnManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,5 +72,7 @@ public class PlayerController : MonoBehaviour
         gameOverText.SetActive(false);
         wallBreachText.SetActive(false);
         tryAgainButton.SetActive(false);
+
+        //SpawnManager.GetComponent < WaveSpawnerScript().waveCount = 1;
     }
 }
