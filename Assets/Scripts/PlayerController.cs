@@ -70,7 +70,5 @@ public class PlayerController : MonoBehaviour
         gameOverText.SetActive(false);
         wallBreachText.SetActive(false);
         tryAgainButton.SetActive(false);
-
-
     }
 }

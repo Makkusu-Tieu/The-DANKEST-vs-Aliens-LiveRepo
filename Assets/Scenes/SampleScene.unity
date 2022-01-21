@@ -1452,6 +1452,7 @@ MonoBehaviour:
   timeBetweenWaves: 3
   enemyCount: 5
   alien: {fileID: 2569303590916114520, guid: c64cf4a8f92b9de4fa38413452e6af19, type: 3}
+  waveCountText: {fileID: 915885647}
 --- !u!1001 &3585551840309882134
 PrefabInstance:
   m_ObjectHideFlags: 0

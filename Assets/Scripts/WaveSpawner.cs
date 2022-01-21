@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class WaveSpawner : MonoBehaviour
     private int[] spawnRangeY = { -4, -2, 0, 2, 4 };
     private int alienSpawnPosY;
 
+    public TextMeshProUGUI waveCountText;
+    int waveCount = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,8 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        waveCountText.text = "Wave: " + waveCount.ToString();
+
         if (waveIsDone == true)
         {
             StartCoroutine(waveSpawner());
@@ -48,6 +54,7 @@ public class WaveSpawner : MonoBehaviour
 
         spawnRate -= 0.1f;
         enemyCount += 3;
+        waveCount += 1;
 
         yield return new WaitForSeconds(timeBetweenWaves);
 
